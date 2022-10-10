@@ -21,22 +21,83 @@ const app = document.querySelector(".app");
   // DISPLAY PRODUCTS
   products.forEach((product) => {
     productsContainer.innerHTML += `
-    <a
-    class="product_anchor"
-    href="https://wa.me/${product.contact}?text=Gostaria%20de%20saber%20o%20preço%20do%20apartamento"
-    target="_blank"
+    <div 
+    class="product_card"
+    data-modal-target="#modal"
     >
-      <div class="product_card">
-        <div class="product_image">
-          <img src="./images/${product.image}">
-        </div>
-        <div class="product_info">
-          <h3>${product.name}</h5>
-          <p>${product.description}</p>
-          <h6>R$${product.price}</h6>
-        </div>
+      <div class="product_image">
+        <img src="./images/${product.image}">
       </div>
-    </a>
+      <div class="product_info">
+        <h3>${product.name}</h5>
+        <p>${product.description}</p>
+        <h6>R$${product.price}</h6>
+      </div>
+    </div>
       `;
   });
+
+  // PRODUCT POP UP MODEL
+  const openModalButtons = document.querySelectorAll("[data-modal-target]");
+  const closeModalButtons = document.querySelectorAll("[data-close-button]");
+  const overlay = document.getElementById("overlay");
+
+  openModalButtons.forEach((button, idx) => {
+    button.addEventListener("click", () => {
+      const modal = document.querySelector(button.dataset.modalTarget);
+      openModal(modal, idx);
+    });
+  });
+
+  overlay.addEventListener("click", () => {
+    const modals = document.querySelectorAll(".modal.active");
+    modals.forEach((modal) => {
+      closeModal(modal);
+    });
+  });
+
+  closeModalButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const modal = button.closest(".modal");
+      closeModal(modal);
+    });
+  });
+
+  function openModal(modal, idx) {
+    if (modal == null) return;
+    modal.classList.add("active");
+    overlay.classList.add("active");
+
+    // DYSPLAY WITH DATA FROM DATABASE
+    const title = document.querySelector('.modal_header .title')
+    title.innerHTML = products[idx].name
+
+    const content = document.querySelector('.modal_body')
+    content.innerHTML = `
+    <div class="modal_body">
+      <div class="image_container">
+        <img src="./images/${products[idx].image}">
+      </div>
+      <p><strong>Descrição</strong>: ${products[idx].description}</p>
+      <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
+      <p><strong>Local</strong>: ${products[idx].location}</p>
+      <h3>R$${products[idx].price}</h3>
+      <div class="button_container">
+        <button> Comprar </button>
+      </div>
+      
+    </div>
+    `
+    const buyButton = document.querySelector('.modal_body button')
+    buyButton.addEventListener('click', () => {
+      window.open(`https://api.whatsapp.com/send?phone=${products[idx].contact}&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`) 
+    })
+  }
+
+  function closeModal(modal) {
+    if (modal == null) return;
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
+  }
+
 })();
