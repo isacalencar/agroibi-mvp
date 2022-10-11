@@ -6,6 +6,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -159,7 +160,8 @@ body {
 }
 
 .products_section h2 {
-  font-size: 20px;
+  margin-bottom: 15px;
+  font-size: 30px;
   text-align: center;
   color: rgb(40, 145, 40);
 }
@@ -198,7 +200,7 @@ body {
   overflow: hidden;
 
   transition: 300ms;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .product_image {
@@ -356,6 +358,34 @@ body {
   opacity: 1;
   pointer-events: all;
 }
+
+/* ABOUT SECTION */
+
+#about {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: solid 1px rgb(42, 42, 42);
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#about p {
+  width: 100%;
+  max-width: 720px;
+  padding: 0 10px 0 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+#about p:last-child {
+  margin-bottom: 0;
+}
+
+/* FOOTER SECTION */
 
 footer {
   width: 100%;
