@@ -84,7 +84,7 @@ body {
   color: rgb(40, 145, 40);
 
   border: solid 1px rgb(40, 145, 40);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .show_menus_button {
@@ -137,7 +137,6 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("./images/background-img.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: top;
   background-size: cover;
 }
@@ -257,7 +256,7 @@ body {
 
   border-radius: 5px;
 
-  z-index: 9;
+  z-index: 11;
   background-color: white;
 }
 
@@ -406,6 +405,7 @@ footer {
 }
 
 footer a {
+  text-decoration: none;
   color: rgb(240, 240, 240);
 }
 
