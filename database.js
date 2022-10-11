@@ -5,7 +5,7 @@ const database = {
       name: "Tomate",
       image: "tomate.jpg",
       description:
-        "Dignissimos eos assumenda est cupiditate perferendis ea repellat,quas sapiente neque possimus ratione alias cum consequatur nostrum dolor, maiores cumque vero optio ipsa libero voluptate sequi. Odio porro cumque ab? Lorem ipsum dolor sit amet consecteturExercitationem dolores quod itaque culpa quo, earum temporibus vero ea harum. nostrum dolor, maiores cumque vero optio ipsa libero voluptate sequi. Odio porro cumque ab? Lorem ipsum dolor sit amet consecteturExercitationem dolores quod itaque culpa quo, earum temporibus vero ea harum. Dignissimos eos assumenda est cupiditate perferendis ea repellat,quas sapiente neque possimus ratione alias cum consequatur nostrum dolor, maiores cumque vero optio ipsa libero voluptate sequi. Odio porro cumque ab? Lorem ipsum dolor sit amet consecteturExercitationem dolores quod itaque culpa quo, earum temporibus vero ea harum. nostrum dolor, maiores cumque vero optio ipsa libero voluptate sequi. Odio porro cumque ab? Lorem ipsum dolor sit amet consecteturExercitationem dolores quod itaque culpa quo, earum temporibus vero ea harum.",
+        "Dignissimos eos assumenda est cupiditate perferendis ea repellat,quas sapiente neque possimus ratione alias cum consequatur nostrum dolor, maiores cumque vero optio ipsa libero voluptate sequi. Odio porro cumque ab? Lorem ipsum dolor sit amet consecteturExercitationem dolores quod itaque culpa quo, earum temporibus vero ea harum.",
       price: "50/caixa",
       seller: "Seu João",
       contact: "https://api.whatsapp.com/send?1=pt_BR&phone=558893205605",

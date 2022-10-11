@@ -77,7 +77,7 @@ const app = document.querySelector(".app");
     modal.classList.add("active");
     overlay.classList.add("active");
 
-    // DYSPLAY WITH DATA FROM DATABASE
+    // DISPLAY MODAL WITH DATA FROM DATABASE
     const title = document.querySelector('.modal_header .title')
     title.innerHTML = products[idx].name
 
@@ -90,9 +90,11 @@ const app = document.querySelector(".app");
       </div>
 
       <div class="product_info">
-        <p><strong>Descrição</strong>: ${products[idx].description}</p>
-        <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
-        <p><strong>Local</strong>: ${products[idx].location}</p>
+        <div class="info">
+          <p><strong>Descrição</strong>: ${products[idx].description}</p>
+          <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
+          <p><strong>Local</strong>: ${products[idx].location}</p>
+        </div>
         <div class="button_container">
           <h3>R$${products[idx].price}</h3>
           <button> Comprar </button>
@@ -101,6 +103,8 @@ const app = document.querySelector(".app");
       
     </div>
     `
+
+    // REDIRECT BUYER TO THE SELLER
     const buyButton = document.querySelector('.modal_body button')
     buyButton.addEventListener('click', () => {
       window.open(`https://api.whatsapp.com/send?phone=${products[idx].contact}&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`) 
@@ -112,5 +116,22 @@ const app = document.querySelector(".app");
     modal.classList.remove("active");
     overlay.classList.remove("active");
   }
+
+  // SAVE PRODUCTS IN THE CART
+  const cartProducts = []
+  const cartButton = document.querySelector('#cart_button')
+  
+  // DISPLAY NUMBER OF PRODUCTS IN THE CART
+  if (cartProducts.length > 0) {
+    cartButton.innerHTML += `( ${cartProducts.length} )`
+  }
+  
+  // DISPLAY MODAL WITH PRODUCTS IN THE CART
+  cartButton.addEventListener('click', showCartProducts)
+  
+  function showCartProducts() {
+    alert('not working')
+  }
+
 
 })();

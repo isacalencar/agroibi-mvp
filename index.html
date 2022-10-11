@@ -11,57 +11,62 @@
   <body>
     <div class="app">
       <header id="home">
-        <nav class="menu">
-          <div class="logo">
-            <img src="images/agroibi.svg" alt="logo" />
-          </div>
+        <nav>
+          <div class="menu">
+            <div class="logo">
+              <img src="images/agroibi.svg" alt="logo" />
+            </div>
 
-          <div class="menu_buttons none">
-            <a href="#home"> Home </a>
-            <a href="#products"> Produtos </a>
-            <a href="#about"> Sobre </a>
-            <a href="mailto:agroibi@gmail.com" target="_blank"> Contato </a>
-          </div>
+            <div class="menu_buttons none">
+              <a href="#home"> Home </a>
+              <a href="#products"> Produtos </a>
+              <a href="#about"> Sobre </a>
+              <a href="mailto:agroibi@gmail.com" target="_blank"> Contato </a>
+            </div>
 
-          <div class="show_menus_button">
-            <div class="button_line"></div>
-            <div class="button_line"></div>
-            <div class="button_line"></div>
+            <div class="show_menus_button">
+              <div class="button_line"></div>
+              <div class="button_line"></div>
+              <div class="button_line"></div>
+            </div>
           </div>
         </nav>
 
         <div class="contact_and_cart">
-          <a href="mailto:agroibi@gmail.com">
-            <img src="./images/mail.png" alt="mail icon">
-            AGROIBI@GMAIL.COM
-          </a>
-          <button id="cart_button">
-            <img src="./images/cart-icon.png" alt="cart icon">
-            CART
-          </button>
+          <div class="container">
+            <div>
+              <a href="mailto:agroibi@gmail.com" target="_blank">
+                <img src="./images/mail.png" alt="mail icon" />
+                AGROIBI@GMAIL.COM
+              </a>
+            </div>
+            <div>
+              <button id="cart_button">
+                <img src="./images/cart-icon.png" alt="cart icon" />
+                CART
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="presentation_container">
-          <img src="./images/agroibi.svg" alt="agrobi logo" />
-
           <p>
-            <em> Marketplace de produtos agrícolas </em>
+            Marketplace de Produtos Agrícolas
           </p>
         </div>
       </header>
       <main>
         <section id="products" class="products_section">
           <h2>PRODUTOS</h2>
-          <div class="products_container">
-            <div class="modal" id="modal">
-              <div class="modal_header">
-                <div class="title"></div>
-                <button data-close-button class="close_button">&times;</button>
-              </div>
-              <div class="modal_body"></div>
+          <div class="products_container"></div>
+          <div class="modal" id="modal">
+            <div class="modal_header">
+              <div class="title"></div>
+              <button data-close-button class="close_button">&times;</button>
             </div>
-            <div id="overlay"></div>
+            <div class="modal_body"></div>
           </div>
+          <div id="overlay"></div>
         </section>
 
         <section id="about">
