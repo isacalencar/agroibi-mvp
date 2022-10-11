@@ -12,6 +12,12 @@ const app = document.querySelector(".app");
     menuButtons.classList.toggle("none");
   });
 
+  // WHEN ANY MENU BUTTON IS CLICKED, HIDE MENU
+  menuButtons.addEventListener('click', () => {
+    navMenu.classList.toggle("active");
+    menuButtons.classList.toggle("none");
+  })
+
   // PRODUCTS SECTION
   const productsContainer = document.querySelector(".products_container");
 
@@ -25,14 +31,17 @@ const app = document.querySelector(".app");
     class="product_card"
     data-modal-target="#modal"
     >
+      
       <div class="product_image">
         <img src="./images/${product.image}">
       </div>
+
       <div class="product_info">
         <h3>${product.name}</h5>
         <p>${product.description}</p>
         <h6>R$${product.price}</h6>
       </div>
+
     </div>
       `;
   });
@@ -75,15 +84,19 @@ const app = document.querySelector(".app");
     const content = document.querySelector('.modal_body')
     content.innerHTML = `
     <div class="modal_body">
-      <div class="image_container">
+      
+      <div class="product_image">
         <img src="./images/${products[idx].image}">
       </div>
-      <p><strong>Descrição</strong>: ${products[idx].description}</p>
-      <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
-      <p><strong>Local</strong>: ${products[idx].location}</p>
-      <h3>R$${products[idx].price}</h3>
-      <div class="button_container">
-        <button> Comprar </button>
+
+      <div class="product_info">
+        <p><strong>Descrição</strong>: ${products[idx].description}</p>
+        <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
+        <p><strong>Local</strong>: ${products[idx].location}</p>
+        <div class="button_container">
+          <h3>R$${products[idx].price}</h3>
+          <button> Comprar </button>
+        </div>
       </div>
       
     </div>
