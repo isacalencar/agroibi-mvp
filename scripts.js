@@ -13,10 +13,10 @@ const app = document.querySelector(".app");
   });
 
   // WHEN ANY MENU BUTTON IS CLICKED, HIDE MENU
-  menuButtons.addEventListener('click', () => {
+  menuButtons.addEventListener("click", () => {
     navMenu.classList.toggle("active");
     menuButtons.classList.toggle("none");
-  })
+  });
 
   // PRODUCTS SECTION
   const productsContainer = document.querySelector(".products_container");
@@ -25,9 +25,10 @@ const app = document.querySelector(".app");
   const products = database.products;
 
   // DISPLAY PRODUCTS
-  products.forEach((product) => {
+  products.forEach((product, idx) => {
     productsContainer.innerHTML += `
     <div 
+    id="${idx}"
     class="product_card"
     data-modal-target="#modal"
     >
@@ -44,6 +45,32 @@ const app = document.querySelector(".app");
 
     </div>
       `;
+  });
+
+  // SEARCH FOR PRODUCTS
+  const searchInput = document.querySelector("#search_input");
+
+  searchInput.addEventListener("input", (el) => {
+    // HIDE ALL PRODUCTS
+    for (let i = 0; i < productsContainer.children.length; i++) {
+      productsContainer.children[i].classList.add("none");
+    }
+
+    // GET USER INPUT IN REAL TIME
+    const value = el.target.value.toLowerCase();
+
+    // CHECK IF PRODUCT EXISTS
+    products.forEach((product, idx) => {
+      const isIncluded =
+        product.name.toLowerCase().includes(value) ||
+        product.seller.toLowerCase().includes(value) ||
+        product.location.toLocaleLowerCase().includes(value);
+
+      // SHOW INCLUDED VALUES
+      if (isIncluded) {
+        productsContainer.children[idx].classList.remove("none");
+      }
+    });
   });
 
   // PRODUCT POP UP MODEL
@@ -78,10 +105,10 @@ const app = document.querySelector(".app");
     overlay.classList.add("active");
 
     // DISPLAY MODAL WITH DATA FROM DATABASE
-    const title = document.querySelector('.modal_header .title')
-    title.innerHTML = products[idx].name
+    const title = document.querySelector(".modal_header .title");
+    title.innerHTML = products[idx].name;
 
-    const content = document.querySelector('.modal_body')
+    const content = document.querySelector(".modal_body");
     content.innerHTML = `
     <div class="modal_body">
       
@@ -90,25 +117,30 @@ const app = document.querySelector(".app");
       </div>
 
       <div class="product_info">
+
         <div class="info">
           <p><strong>Descrição</strong>: ${products[idx].description}</p>
           <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
           <p><strong>Local</strong>: ${products[idx].location}</p>
         </div>
+
         <div class="button_container">
           <h3>R$${products[idx].price}</h3>
           <button> Comprar </button>
         </div>
+
       </div>
       
     </div>
-    `
+    `;
 
     // REDIRECT BUYER TO THE SELLER
-    const buyButton = document.querySelector('.modal_body button')
-    buyButton.addEventListener('click', () => {
-      window.open(`https://api.whatsapp.com/send?phone=${products[idx].contact}&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`) 
-    })
+    const buyButton = document.querySelector(".modal_body button");
+    buyButton.addEventListener("click", () => {
+      window.open(
+        `https://api.whatsapp.com/send?phone=${products[idx].contact}&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`
+      );
+    });
   }
 
   function closeModal(modal) {
@@ -118,20 +150,18 @@ const app = document.querySelector(".app");
   }
 
   // SAVE PRODUCTS IN THE CART
-  const cartProducts = []
-  const cartButton = document.querySelector('#cart_button')
-  
+  const cartProducts = [];
+  const cartButton = document.querySelector("#cart_button");
+
   // DISPLAY NUMBER OF PRODUCTS IN THE CART
   if (cartProducts.length > 0) {
-    cartButton.innerHTML += `( ${cartProducts.length} )`
+    cartButton.innerHTML += `( ${cartProducts.length} )`;
   }
-  
+
   // DISPLAY MODAL WITH PRODUCTS IN THE CART
-  cartButton.addEventListener('click', showCartProducts)
-  
+  cartButton.addEventListener("click", showCartProducts);
+
   function showCartProducts() {
-    alert('not working')
+    alert("indisponível no momento"); // Stopped here
   }
-
-
 })();

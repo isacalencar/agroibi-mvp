@@ -33,11 +33,11 @@ nav {
   width: 100%;
   height: 10vh;
   overflow: hidden;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   box-shadow: 0 1px 2px rgb(42, 42, 42);
   background-color: white;
   position: fixed;
@@ -139,7 +139,7 @@ nav {
   align-items: center;
 }
 
-.contact_and_cart .container{
+.contact_and_cart .container {
   width: 90%;
   max-width: 1065px;
   overflow: hidden;
@@ -222,6 +222,32 @@ nav {
   font-size: 30px;
   text-align: center;
   color: rgb(40, 145, 40);
+}
+
+.search_input_container {
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+#search_input {
+  width: 90%;
+  max-width: 500px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(220, 220, 220);
+
+  font-size: 20px;
+  color: rgb(22, 80, 22);
+  outline-color: rgb(22, 80, 22);
+}
+
+#search_input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }
 
 .products_container {
@@ -310,7 +336,7 @@ nav {
 .modal {
   width: 95%;
   max-width: 680px;
-  max-height: 90vh;
+  max-height: 80vh;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -370,12 +396,12 @@ nav {
 
 .modal_body .product_image {
   width: 250px;
-  height: 250px;
-  
+  height: 175px;
+
   margin: auto;
   margin-bottom: 10px;
   border-radius: 10px;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -383,8 +409,7 @@ nav {
 }
 
 .modal_body img {
-  width: 100%;
-  height: 100%;
+  width: 250px;
 }
 
 .modal_body .product_info {
@@ -396,7 +421,7 @@ nav {
 }
 
 .modal_body .product_info .info p {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .modal_body .product_info .info p:last-child {
@@ -599,10 +624,10 @@ footer a {
 
   .modal img {
     width: 250px;
-    height: 250px;
   }
 
   .modal .product_image {
+    height: 250px;
     margin: 0;
   }
 
