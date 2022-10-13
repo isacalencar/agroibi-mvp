@@ -57,14 +57,31 @@ const app = document.querySelector(".app");
     }
 
     // GET USER INPUT IN REAL TIME
-    const value = el.target.value.toLowerCase();
+    const value = el.target.value
+      .toLowerCase()
+      .trim()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, ""); // GET RID OF SPECIAL CHARS
+    console.log(value);
 
     // CHECK IF PRODUCT EXISTS
     products.forEach((product, idx) => {
       const isIncluded =
-        product.name.toLowerCase().includes(value) ||
-        product.seller.toLowerCase().includes(value) ||
-        product.location.toLocaleLowerCase().includes(value);
+        product.name
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(value) ||
+        product.seller
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(value) ||
+        product.location
+          .toLocaleLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(value);
 
       // SHOW INCLUDED VALUES
       if (isIncluded) {
@@ -110,8 +127,6 @@ const app = document.querySelector(".app");
 
     const content = document.querySelector(".modal_body");
     content.innerHTML = `
-    <div class="modal_body">
-      
       <div class="product_image">
         <img src="./images/${products[idx].image}">
       </div>
@@ -130,8 +145,6 @@ const app = document.querySelector(".app");
         </div>
 
       </div>
-      
-    </div>
     `;
 
     // REDIRECT BUYER TO THE SELLER

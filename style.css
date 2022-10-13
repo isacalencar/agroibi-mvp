@@ -111,7 +111,7 @@ nav {
   height: 2px;
   background-color: rgb(42, 42, 42);
   margin: 2px;
-  transition: ease 300ms;
+  transition: ease 200ms;
 }
 
 .show_menus_button.active .button_line:nth-child(1) {
@@ -183,7 +183,7 @@ nav {
   cursor: pointer;
 
   overflow: hidden;
-  transition: 300ms;
+  transition: 200ms;
 }
 
 .presentation_container {
@@ -286,7 +286,7 @@ nav {
   flex-direction: column;
   overflow: hidden;
 
-  transition: 300ms;
+  transition: 200ms;
   cursor: pointer;
 }
 
@@ -316,7 +316,7 @@ nav {
 
 .product_card .product_info p {
   height: 100%;
-  max-height: 50px;
+  max-height: 75px;
   overflow: scroll;
 }
 
@@ -342,6 +342,7 @@ nav {
   left: 50%;
 
   transform: translate(-50%, -50%) scale(0);
+  transition: 200ms;
   border-radius: 5px;
 
   z-index: 15;
@@ -363,10 +364,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgb(22, 80, 22);
-
-  background-color: rgb(240, 240, 240);
-  position: sticky;
-  top: 0;
   z-index: 16;
 }
 
@@ -421,7 +418,18 @@ nav {
 }
 
 .modal_body .product_info .info p {
+  overflow: hidden;
   margin-bottom: 10px;
+}
+
+.modal_body .product_info .info p:first-child {
+  min-height: 80px;
+  max-height: 110px;
+  overflow-y: scroll;
+}
+
+.modal_body .product_info .info p:first-child::-webkit-scrollbar {
+  display: none;
 }
 
 .modal_body .product_info .info p:last-child {
@@ -452,7 +460,7 @@ nav {
 
   background-color: rgb(22, 80, 22);
   color: rgb(240, 240, 240);
-  transition: 300ms;
+  transition: 200ms;
 }
 
 #overlay {
@@ -582,7 +590,7 @@ footer a {
     border: none;
     border: none;
 
-    transition: 300ms;
+    transition: 200ms;
   }
 
   .menu_buttons a:active {
@@ -611,6 +619,16 @@ footer a {
 
   .product_card:hover {
     box-shadow: 0 0 5px black;
+  }
+
+  .modal_header .close_button {
+    border-radius: 10px;
+    transition: 200ms;
+  }
+
+  .modal_header .close_button:hover {
+    background-color: rgb(40, 145, 40);
+    color: rgb(240, 240, 240);
   }
 
   .modal_body {
