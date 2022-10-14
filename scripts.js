@@ -61,7 +61,6 @@ const app = document.querySelector(".app");
       .trim()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, ""); // GET RID OF SPECIAL CHARS
-    console.log(value);
 
     // CHECK IF PRODUCT EXISTS
     products.forEach((product, idx) => {
@@ -94,8 +93,6 @@ const app = document.querySelector(".app");
           countUnavailableProducts++;
         }
       }
-
-      console.log(countUnavailableProducts, products.length);
 
       // WARN USER IF PRODUCT WAS NOT FOUND
       if (countUnavailableProducts == products.length && products.length > 0) {
@@ -157,9 +154,9 @@ const app = document.querySelector(".app");
       <div class="product_info">
 
         <div class="info">
+        <p><strong>Local</strong>: ${products[idx].location}</p>
+        <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
           <p><strong>Descrição</strong>: ${products[idx].description}</p>
-          <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
-          <p><strong>Local</strong>: ${products[idx].location}</p>
         </div>
 
         <div class="button_container">
@@ -193,7 +190,6 @@ const app = document.querySelector(".app");
   const cartCloseButton = document.querySelector(".cart_close_button");
 
   // DISPLAY LISTED PRODUCTS
-
   if (cartProducts.length > 0) {
     cartProducts.forEach((product) => {
       cartProductsContainer.innerHTML += `
@@ -215,7 +211,7 @@ const app = document.querySelector(".app");
 
   // DISPLAY CART
   cartButton.addEventListener("click", () => {
-    //alert("Funcionalidade indisponível no momento");
+    alert("Funcionalidade indisponível no momento");
     cart.classList.toggle("none");
   });
 
