@@ -49,7 +49,6 @@ const app = document.querySelector(".app");
 
   // SEARCH FOR PRODUCTS
   const searchInput = document.querySelector("#search_input");
-
   searchInput.addEventListener("input", (el) => {
     // HIDE ALL PRODUCTS
     for (let i = 0; i < productsContainer.children.length; i++) {
@@ -87,8 +86,32 @@ const app = document.querySelector(".app");
       if (isIncluded) {
         productsContainer.children[idx].classList.remove("none");
       }
+
+      let countUnavailableProducts = 0;
+
+      for (let i = 0; i < productsContainer.children.length; i++) {
+        if (productsContainer.children[i].classList.contains("none")) {
+          countUnavailableProducts++;
+        }
+      }
+
+      console.log(countUnavailableProducts, products.length);
+
+      // WARN USER IF PRODUCT WAS NOT FOUND
+      if (countUnavailableProducts == products.length && products.length > 0) {
+        document.querySelector("#warn2").classList.remove("none");
+      } else {
+        document.querySelector("#warn2").classList.add("none");
+      }
     });
   });
+
+  // WARN USER IF THERE IS NO PRODUCT
+  if (products.length == 0) {
+    document.querySelector("#warn1").classList.remove("none");
+  } else {
+    document.querySelector("#warn1").classList.add("none");
+  }
 
   // PRODUCT POP UP MODEL
   const openModalButtons = document.querySelectorAll("[data-modal-target]");
@@ -164,17 +187,40 @@ const app = document.querySelector(".app");
 
   // SAVE PRODUCTS IN THE CART
   const cartProducts = [];
+  const cart = document.querySelector("#cart");
+  const cartProductsContainer = document.querySelector(".cart_products");
   const cartButton = document.querySelector("#cart_button");
+  const cartCloseButton = document.querySelector(".cart_close_button");
+
+  // DISPLAY LISTED PRODUCTS
+
+  if (cartProducts.length > 0) {
+    cartProducts.forEach((product) => {
+      cartProductsContainer.innerHTML += `
+    <li>${product.name}</li>
+    `;
+    });
+  } else {
+    cartProductsContainer.innerHTML = `
+    <li style="color: red">
+      Nenhum Item Adicionado
+    </li>
+    `
+  }
 
   // DISPLAY NUMBER OF PRODUCTS IN THE CART
   if (cartProducts.length > 0) {
     cartButton.innerHTML += `( ${cartProducts.length} )`;
   }
 
-  // DISPLAY MODAL WITH PRODUCTS IN THE CART
-  cartButton.addEventListener("click", showCartProducts);
+  // DISPLAY CART
+  cartButton.addEventListener("click", () => {
+    //alert("Funcionalidade indisponível no momento");
+    cart.classList.toggle("none");
+  });
 
-  function showCartProducts() {
-    alert("indisponível no momento"); // Stopped here
-  }
+  // REMOVE CART
+  cartCloseButton.addEventListener("click", () => {
+    cart.classList.add("none");
+  });
 })();

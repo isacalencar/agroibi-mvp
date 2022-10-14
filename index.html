@@ -50,6 +50,18 @@
                 Carrinho
               </button>
             </div>
+
+            <div id="cart" class="none">
+              <div class="cart_header">
+                <div class="cart_title">Carrinho</div>
+                <div class="cart_close_button">&times;</div>
+              </div>
+
+              <div class="cart_body">
+                <div class="cart_title">Produtos</div>
+                <ul class="cart_products"></ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -69,6 +81,14 @@
               placeholder="Pesquisar produto..."
             />
           </div>
+
+          <h2 id="warn1" class="none" style="color: red">
+            não há produtos no momento
+          </h2>
+
+          <h2 id="warn2" class="none" style="color: red">
+            produto não encontrado
+          </h2>
 
           <div class="products_container"></div>
 

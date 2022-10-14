@@ -27,6 +27,16 @@ body {
   }
 }
 
+@keyframes fade_in_cart {
+  0% {
+    bottom: -70vh;
+  }
+
+  100% {
+    bottom: 0vh;
+  }
+}
+
 /* MENU SECTION */
 
 nav {
@@ -75,7 +85,7 @@ nav {
   align-items: center;
   gap: 30px;
 
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(22, 80, 22);
 
   animation: fade_in_show 500ms;
   z-index: 11;
@@ -87,9 +97,9 @@ nav {
 
   text-align: center;
   text-decoration: none;
-  color: rgb(40, 145, 40);
+  color: rgb(240, 240, 240);
 
-  border: solid 1px rgb(40, 145, 40);
+  border: solid 1px rgb(240, 240, 240);
   border-radius: 10px;
 }
 
@@ -115,6 +125,7 @@ nav {
 }
 
 .show_menus_button.active .button_line:nth-child(1) {
+  background-color: rgb(240, 240, 240);
   transform: rotate(45deg) translate(1px);
   margin: 0;
 }
@@ -124,6 +135,7 @@ nav {
 }
 
 .show_menus_button.active .button_line:nth-child(3) {
+  background-color: rgb(240, 240, 240);
   transform: rotate(-45deg) translate(1px);
   margin: 0;
 }
@@ -184,6 +196,66 @@ nav {
 
   overflow: hidden;
   transition: 200ms;
+}
+
+#cart {
+  width: 100%;
+  max-width: 800px;
+  height: 70vh;
+
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+
+  transform: translate(-50%, 0);
+
+  background-color: rgb(230, 230, 230);
+
+  animation: fade_in_cart 200ms;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.cart_header {
+  background-color: rgb(22, 80, 22);
+  color: rgb(240, 240, 240);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 16;
+}
+
+.cart_header .cart_title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.cart_header .cart_close_button {
+  padding: 0 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cart_body {
+  padding: 10px 15px;
+}
+
+.cart_body .cart_title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cart_products {
+  list-style: none;
+  text-align: center;
+  padding: 10px;
 }
 
 .presentation_container {
@@ -335,7 +407,7 @@ nav {
 
 .modal {
   width: 95%;
-  max-width: 680px;
+  max-width: 650px;
   max-height: 80vh;
   position: fixed;
   top: 50%;
@@ -363,7 +435,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgb(22, 80, 22);
+  background-color: rgb(22, 80, 22);
+  color: rgb(240, 240, 240);
   z-index: 16;
 }
 
@@ -376,15 +449,15 @@ nav {
 }
 
 .modal_header .close_button {
-  padding: 0 5px;
+  padding: 0 10px;
   cursor: pointer;
   border: none;
   outline: none;
   background: none;
 
+  color: rgb(240, 240, 240);
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(22, 80, 22);
 }
 
 .modal_body {
@@ -397,6 +470,7 @@ nav {
 
   margin: auto;
   margin-bottom: 10px;
+  border: solid 2px rgb(40, 145, 40);
   border-radius: 10px;
 
   display: flex;
@@ -423,8 +497,8 @@ nav {
 }
 
 .modal_body .product_info .info p:first-child {
-  min-height: 80px;
-  max-height: 110px;
+  min-height: 30px;
+  max-height: 80px;
   overflow-y: scroll;
 }
 
@@ -585,6 +659,7 @@ footer a {
   }
 
   .menu_buttons a {
+    color: rgb(40, 145, 40);
     font-size: 20px;
 
     border: none;
@@ -605,6 +680,16 @@ footer a {
     background-color: rgb(22, 80, 22);
   }
 
+  .cart_header .cart_close_button {
+    border-radius: 5px;
+    transition: 200ms;
+  }
+
+  .cart_header .cart_close_button:hover {
+    background-color: rgb(240, 240, 240);
+    color: rgb(22, 80, 22);
+  }
+
   .presentation_container {
     height: 30vh;
   }
@@ -622,13 +707,13 @@ footer a {
   }
 
   .modal_header .close_button {
-    border-radius: 10px;
+    border-radius: 5px;
     transition: 200ms;
   }
 
   .modal_header .close_button:hover {
-    background-color: rgb(40, 145, 40);
-    color: rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
+    color: rgb(22, 80, 22);
   }
 
   .modal_body {
@@ -651,6 +736,11 @@ footer a {
 
   .modal .product_info {
     max-width: 350px;
+  }
+
+  .modal_body .product_info .info p:first-child {
+    min-height: 80px;
+    max-height: 100px;
   }
 
   .modal_body button:hover {
