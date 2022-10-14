@@ -154,8 +154,8 @@ const app = document.querySelector(".app");
       <div class="product_info">
 
         <div class="info">
-        <p><strong>Local</strong>: ${products[idx].location}</p>
         <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
+        <p><strong>Local</strong>: ${products[idx].location}</p>
           <p><strong>Descrição</strong>: ${products[idx].description}</p>
         </div>
 

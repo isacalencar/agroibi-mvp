@@ -165,6 +165,19 @@ nav {
   align-items: center;
 }
 
+.whatsapp_container {
+  position: fixed;
+  bottom: 1%;
+  right: 2%;
+  z-index: 9;
+}
+
+.contact_and_cart .whatsapp_container a img {
+  width: 100%;
+  max-width: 50px;
+  border-radius: 50%;
+}
+
 .contact_and_cart .container {
   width: 90%;
   max-width: 1065px;
@@ -229,7 +242,7 @@ nav {
 
   animation: fade_in_cart 200ms;
   overflow: hidden;
-  z-index: 5;
+  z-index: 10;
 }
 
 .cart_header {
@@ -239,7 +252,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 16;
 }
 
 .cart_header .cart_title {
@@ -433,9 +445,9 @@ nav {
   transition: 200ms;
   border-radius: 5px;
 
-  z-index: 15;
   background-color: rgb(240, 240, 240);
   overflow-y: scroll;
+  z-index: 15;
 }
 
 .modal::-webkit-scrollbar {
@@ -682,6 +694,18 @@ footer a {
 
   .menu_buttons a:hover {
     text-shadow: 0 -1px 1px rgb(22, 80, 22);
+  }
+
+  .whatsapp_container {
+    right: 5%;
+  }
+  .contact_and_cart .whatsapp_container a img {
+    max-width: 65px;
+    transition: 200ms;
+  }
+
+  .contact_and_cart .whatsapp_container a img:hover {
+    box-shadow: 0 0 5px lime;
   }
 
   .contact_and_cart .container #cart_button:hover {
