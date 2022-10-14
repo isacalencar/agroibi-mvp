@@ -617,7 +617,7 @@ footer a {
 }
 
 /* VERY SMALL DISPLAYS */
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 500px) {
   .modal_body .product_image {
     display: none;
   }
