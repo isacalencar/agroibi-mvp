@@ -1,7 +1,7 @@
 // GLOBAL SCOPE VARIABLES
 const app = document.querySelector(".app");
 
-(async function main() {
+async function main() {
   // MENU SECTION
   const navMenu = document.querySelector(".show_menus_button");
   const menuButtons = document.querySelector(".menu_buttons");
@@ -27,24 +27,24 @@ const app = document.querySelector(".app");
   // DISPLAY PRODUCTS
   products.forEach((product, idx) => {
     productsContainer.innerHTML += `
-    <div 
-    id="${idx}"
-    class="product_card"
-    data-modal-target="#modal"
-    >
-      
-      <div class="product_image">
-        <img src="./images/${product.image}">
-      </div>
+      <div 
+      id="${idx}"
+      class="product_card"
+      data-modal-target="#modal"
+      >
+        
+        <div class="product_image">
+          <img src="./images/${product.image}">
+        </div>
 
-      <div class="product_info">
-        <h3>${product.name}</h5>
-        <p>${product.description}</p>
-        <h6>R$${product.price}</h6>
-      </div>
+        <div class="product_info">
+          <h3>${product.name}</h5>
+          <p>${product.description}</p>
+          <h6>R$${product.price}</h6>
+        </div>
 
-    </div>
-      `;
+      </div>
+    `;
   });
 
   // SEARCH FOR PRODUCTS
@@ -161,7 +161,12 @@ const app = document.querySelector(".app");
 
         <div class="button_container">
           <h3>R$${products[idx].price}</h3>
-          <button> Comprar </button>
+          <div class="buttons">
+            <button> Comprar </button>
+            <button class="add_to_cart_button">
+              <img src="./images/cart-icon.png">
+            </button>
+          </div>
         </div>
 
       </div>
@@ -174,6 +179,17 @@ const app = document.querySelector(".app");
         `https://api.whatsapp.com/send?phone=${products[idx].contact}&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`
       );
     });
+
+    const addToCartButton = document.querySelector(".add_to_cart_button");
+    addToCartButton.addEventListener("click", () => {
+      let cartProduct = products[idx];
+      // adding an id
+      cartProduct.id = idx;
+
+      cartProducts.push(cartProduct);
+      updateCartState();
+      alert("Produto adicionado ao carrinho!");
+    });
   }
 
   function closeModal(modal) {
@@ -183,40 +199,88 @@ const app = document.querySelector(".app");
   }
 
   // SAVE PRODUCTS IN THE CART
-  const cartProducts = [];
-  const cart = document.querySelector("#cart");
-  const cartProductsContainer = document.querySelector(".cart_products");
-  const cartButton = document.querySelector("#cart_button");
-  const cartCloseButton = document.querySelector(".cart_close_button");
-
-  // DISPLAY LISTED PRODUCTS
-  if (cartProducts.length > 0) {
-    cartProducts.forEach((product) => {
-      cartProductsContainer.innerHTML += `
-    <li>${product.name}</li>
-    `;
-    });
-  } else {
-    cartProductsContainer.innerHTML = `
-    <li style="color: red">
-      Nenhum Item Adicionado
-    </li>
-    `
-  }
-
-  // DISPLAY NUMBER OF PRODUCTS IN THE CART
-  if (cartProducts.length > 0) {
-    cartButton.innerHTML += `( ${cartProducts.length} )`;
-  }
+  let cartProducts = [];
 
   // DISPLAY CART
+  const cartButton = document.querySelector("#cart_button");
+  const cart = document.querySelector("#cart");
+
   cartButton.addEventListener("click", () => {
-    alert("Funcionalidade indisponível no momento");
     cart.classList.toggle("none");
   });
 
-  // REMOVE CART
-  cartCloseButton.addEventListener("click", () => {
-    cart.classList.add("none");
-  });
-})();
+  function updateCartState() {
+    // DISPLAY NUMBER OF PRODUCTS IN THE CART
+    if (cartProducts.length > 0) {
+      const numOfProducts = document.querySelector("#cart_button span");
+      numOfProducts.innerHTML = `( ${cartProducts.length} )`;
+    } else {
+      const numOfProducts = document.querySelector("#cart_button span");
+      numOfProducts.innerHTML = "";
+    }
+
+    const cartProductsContainer = document.querySelector(".cart_products");
+    const cartCloseButton = document.querySelector(".cart_close_button");
+
+    // ClEAR LISTED PRODUCTS
+    cartProductsContainer.innerHTML = "";
+
+    // DISPLAY LISTED PRODUCTS
+    if (cartProducts.length > 0) {
+      cartProducts.forEach((product) => {
+        cartProductsContainer.innerHTML += `
+        <li id="${product.id}" class="cart_item">
+          <div class="data">
+            <span class="product_name">${product.name}</span>
+            <span>${product.location}</span>
+            <span>R$${product.price}</span>
+          </div>
+
+          <button class="close_button">&times;</button>
+        </li>
+      `;
+      });
+
+      const buyButtons = document.querySelectorAll(".cart_item");
+      const removeItemButtons = document.querySelectorAll(
+        ".cart_item .close_button"
+      );
+
+      buyButtons.forEach((button) => {
+        button.querySelector(".data").addEventListener("click", () => {
+          const productId = Number(button.id);
+          alert(products[productId].name);
+          // window.open(
+          //   `https://api.whatsapp.com/send?phone=${
+          //     products[productId].contact
+          //   }&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`
+          // );
+        });
+      });
+
+      removeItemButtons.forEach((button, idx) => {
+        button.addEventListener("click", () => {
+          let firstHalf = cartProducts.slice(0, idx);
+          let secondHalf = cartProducts.slice(idx + 1);
+          cartProducts = firstHalf.concat(secondHalf);
+          updateCartState();
+        });
+      });
+    } else {
+      cartProductsContainer.innerHTML = `
+      <li style="color: red">
+        Nenhum Item Adicionado
+      </li>
+    `;
+    }
+
+    // REMOVE CART
+    cartCloseButton.addEventListener("click", () => {
+      cart.classList.add("none");
+    });
+  }
+
+  updateCartState();
+}
+
+main();
