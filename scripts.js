@@ -189,6 +189,8 @@ async function main() {
       cartProducts.push(cartProduct);
       updateCartState();
       alert("Produto adicionado ao carrinho!");
+      // ADD A LOCAL STORAGE FUNCTIONALITY
+      localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     });
   }
 
@@ -199,7 +201,7 @@ async function main() {
   }
 
   // SAVE PRODUCTS IN THE CART
-  let cartProducts = [];
+  let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
   // DISPLAY CART
   const cartButton = document.querySelector("#cart_button");
@@ -249,12 +251,10 @@ async function main() {
       buyButtons.forEach((button) => {
         button.querySelector(".data").addEventListener("click", () => {
           const productId = Number(button.id);
-          alert(products[productId].name);
-          // window.open(
-          //   `https://api.whatsapp.com/send?phone=${
-          //     products[productId].contact
-          //   }&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`
-          // );
+
+          window.open(
+            `https://api.whatsapp.com/send?phone=${products[productId].contact}&text=Olá!%20Vi%20o%20seu%20produto%20na%20Agroibi,%20gostaria%20de%20saber%20mais%20informações.`
+          );
         });
       });
 
@@ -263,6 +263,7 @@ async function main() {
           let firstHalf = cartProducts.slice(0, idx);
           let secondHalf = cartProducts.slice(idx + 1);
           cartProducts = firstHalf.concat(secondHalf);
+          localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
           updateCartState();
         });
       });
@@ -281,6 +282,7 @@ async function main() {
   }
 
   updateCartState();
+  // localStorage.clear()
 }
 
 main();
