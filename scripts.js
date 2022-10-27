@@ -156,6 +156,7 @@ async function main() {
         <div class="info">
         <p><strong>Vendedor</strong>: ${products[idx].seller}</p>
         <p><strong>Local</strong>: ${products[idx].location}</p>
+        <p><strong>Faz Entrega</strong>: ${products[idx].deliver}</p>
           <p><strong>Descrição</strong>: ${products[idx].description}</p>
         </div>
 
@@ -183,13 +184,13 @@ async function main() {
     const addToCartButton = document.querySelector(".add_to_cart_button");
     addToCartButton.addEventListener("click", () => {
       let cartProduct = products[idx];
-      // adding an id
+      // adding an id to each product
       cartProduct.id = idx;
 
       cartProducts.push(cartProduct);
       updateCartState();
       alert("Produto adicionado ao carrinho!");
-      // ADD A LOCAL STORAGE FUNCTIONALITY
+      // save products on user local storage
       localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     });
   }
@@ -263,7 +264,8 @@ async function main() {
           let firstHalf = cartProducts.slice(0, idx);
           let secondHalf = cartProducts.slice(idx + 1);
           cartProducts = firstHalf.concat(secondHalf);
-          localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
+          // save products on user local storage
+          localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
           updateCartState();
         });
       });
@@ -282,7 +284,6 @@ async function main() {
   }
 
   updateCartState();
-  // localStorage.clear()
 }
 
 main();
