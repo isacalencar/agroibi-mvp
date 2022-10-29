@@ -34,7 +34,7 @@ async function main() {
       >
         
         <div class="product_image">
-          <img src="./images/${product.image}">
+          <img src="./images/products/${product.image}">
         </div>
 
         <div class="product_info">
@@ -148,7 +148,7 @@ async function main() {
     const content = document.querySelector(".modal_body");
     content.innerHTML = `
       <div class="product_image">
-        <img src="./images/${products[idx].image}">
+        <img src="./images/products/${products[idx].image}">
       </div>
 
       <div class="product_info">
@@ -188,8 +188,17 @@ async function main() {
       cartProduct.id = idx;
 
       cartProducts.push(cartProduct);
+      
       updateCartState();
-      alert("Produto adicionado ao carrinho!");
+      
+      // alert user about product cart addition
+      const alertPopUp = document.querySelector('.cart_warning')
+      alertPopUp.classList.remove('none')
+      
+      setTimeout(() => {
+        alertPopUp.classList.add('none')
+      },1000)
+      
       // save products on user local storage
       localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     });
