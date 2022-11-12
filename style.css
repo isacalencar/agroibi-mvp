@@ -28,6 +28,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 10vh;
   color: rgb(22, 80, 22);
+  background-color: rgb(240, 240, 240);
 }
 
 /* ANIMATIONS */
@@ -239,7 +240,7 @@ nav {
 
   transform: translate(-50%, 0);
 
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(220, 220, 220);
 
   animation: fade_in_cart 200ms;
   overflow: hidden;
@@ -310,6 +311,8 @@ nav {
   margin-top: 10px;
   border: solid 1px rgb(22, 80, 22);
   border-radius: 5px;
+
+  background-color: rgb(255, 255, 255);
 
   display: flex;
   justify-content: space-between;
@@ -447,9 +450,8 @@ nav {
 .products_container {
   width: 100%;
   max-width: 1200px;
-  min-height: 50vh;
+  min-height: 60vh;
   padding: 2%;
-
   margin: auto;
 
   display: flex;
@@ -474,7 +476,7 @@ nav {
   width: 240px;
   height: 360px;
 
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(220, 220, 220);
   border-radius: 5px;
 
   display: flex;
@@ -539,7 +541,7 @@ nav {
   transform: translate(-50%, -50%) scale(0);
   border-radius: 5px;
 
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(220, 220, 220);
   overflow-y: scroll;
   z-index: 15;
 }
@@ -558,7 +560,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(22, 80, 22);
-  color: rgb(240, 240, 240);
+  color: rgb(220, 220, 220);
   z-index: 16;
 }
 
@@ -594,6 +596,7 @@ nav {
   margin-bottom: 10px;
   border: solid 2px rgb(40, 145, 40);
   border-radius: 10px;
+  background-color: rgb(255, 255, 255);
 
   display: flex;
   justify-content: center;
@@ -692,9 +695,10 @@ nav {
 /* ABOUT SECTION */
 
 #about {
+  min-height: 60vh;
   margin-top: 50px;
   padding: 20px 0;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(220, 220, 220);
 }
 
 #about h2 {
@@ -813,6 +817,7 @@ footer a {
   .whatsapp_container {
     right: 5%;
   }
+  
   .contact_and_cart .whatsapp_container a img {
     max-width: 65px;
     transition: 200ms;
