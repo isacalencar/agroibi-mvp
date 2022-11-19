@@ -6,7 +6,7 @@ const database = {
       image: "banana-pacovan.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "20 / caixa",
+      price: "20 / caixa-16kg",
       seller: "Joverlandio Alencar",
       contact: 558894407489,
       location: "Tianguá",
@@ -18,7 +18,7 @@ const database = {
       image: "pimentao-verde.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "30,00 / caixa",
+      price: "31,00 / caixa-12kg",
       seller: "Chiquinho Hortifrute",
       contact: 558892167650,
       location: "Tianguá",
@@ -30,7 +30,7 @@ const database = {
       image: "batata-doce.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "60,00 / caixa",
+      price: "61,00 / caixa-25kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -42,7 +42,7 @@ const database = {
       image: "pepino.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "45,00 / caixa",
+      price: "46,00 / caixa-25kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -54,7 +54,7 @@ const database = {
       image: "maracuja.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "65,00 / caixa",
+      price: "71,00 / caixa-18kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -66,7 +66,7 @@ const database = {
       image: "chuchu.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "20 / caixa",
+      price: "31,00 / caixa-25kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -78,7 +78,7 @@ const database = {
       image: "feijao-verde.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "35,00 / caixa",
+      price: "41,00 / caixa-15kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -90,7 +90,7 @@ const database = {
       image: "abobrinha.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "50,00 / caixa",
+      price: "46,00 / caixa-20kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -102,7 +102,7 @@ const database = {
       image: "berinjela.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "25,00 / caixa",
+      price: "31,00 / caixa-13kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -114,7 +114,7 @@ const database = {
       image: "vagem.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "40,00 / caixa",
+      price: "41,00 / caixa-10kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -126,7 +126,7 @@ const database = {
       image: "pimentinha-de-cheiro.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "20, 00 / caixa",
+      price: "28, 00 / caixa-10kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -138,19 +138,7 @@ const database = {
       image: "alface.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "10,00 / caixa",
-      seller: "Chiquinho Hortifruti",
-      contact: 558892167650,
-      location: "Tianguá",
-      deliver: "Sim",
-    },
-    // PRODUCT
-    {
-      name: "Cheiro Verde",
-      image: "cheiro-verde.jpg",
-      description:
-        "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "0,40 / molho",
+      price: "16,00 / caixa-10kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -162,7 +150,7 @@ const database = {
       image: "macaxeira.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "35,00 / caixa",
+      price: "41,00 / caixa-25kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -174,7 +162,7 @@ const database = {
       image: "alcega.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "20,00 / caixa",
+      price: "26,00 / caixa-10kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -186,7 +174,7 @@ const database = {
       image: "maxixe.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "45,00 / caixa",
+      price: "51,00 / caixa-15kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -198,7 +186,7 @@ const database = {
       image: "quiabo.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "30,00 / caixa",
+      price: "36,00 / caixa-15kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
