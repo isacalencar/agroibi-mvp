@@ -42,7 +42,7 @@ const database = {
       image: "pepino.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "46,00 / caixa-25kg",
+      price: "31,00 / caixa-25kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -102,7 +102,7 @@ const database = {
       image: "berinjela.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "31,00 / caixa-13kg",
+      price: "26,00 / caixa-13kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -114,7 +114,7 @@ const database = {
       image: "vagem.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "41,00 / caixa-10kg",
+      price: "31,00 / caixa-10kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -126,7 +126,7 @@ const database = {
       image: "pimentinha-de-cheiro.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "28, 00 / caixa-10kg",
+      price: "31, 00 / caixa-10kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -150,7 +150,7 @@ const database = {
       image: "macaxeira.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "41,00 / caixa-25kg",
+      price: "46,00 / caixa-25kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
@@ -174,7 +174,7 @@ const database = {
       image: "maxixe.jpg",
       description:
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
-      price: "51,00 / caixa-15kg",
+      price: "41,00 / caixa-15kg",
       seller: "Chiquinho Hortifruti",
       contact: 558892167650,
       location: "Tianguá",
