@@ -8,7 +8,7 @@ const database = {
         "Para mais detalhes e negociação, entre em contato comigo clicando em comprar",
       price: "20 / caixa-16kg",
       seller: "Joverlandio Alencar",
-      contact: 558894407489,
+      contact: 558892528316,
       location: "Tianguá",
       deliver: "Não",
     },
